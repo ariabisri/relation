@@ -1,0 +1,19 @@
+article : <%= @article.title %>
+<%= form_for @comment do |f| %>
+<%= f.label :user_id %>
+<%= f.text_field :user_id %>
+<%= @comment.errors[:title].first unless @comment.errors[:title].blank? %>
+<br/>
+<%= f.label :content %>
+<%= f.text_area :content, cols: 20, rows: 10 %>
+<%= @comment.errors[:content].first unless @comment.errors[:content].blank?
+%>
+<br/>
+<%= f.label :status %>
+<%= f.radio_button :status, 'active' %>
+<%= f.label :article_status, "active" %>
+<%= f.radio_button :status, "off", :checked =>true %>
+<%= f.label :article_status, "off" %>
+<br/>
+<%= f.submit :submit %>
+<% end %>
