@@ -1,8 +1,8 @@
 article : <%= @article.title %>
-<%= form_for @comment do |f| %>
-<%= f.label :user_id %>
-<%= f.text_field :user_id %>
-<%= @comment.errors[:title].first unless @comment.errors[:title].blank? %>
+<%= form_for @comment, :url =>{:action => :create, :id => @article.id} do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= @comment.errors[:username].first unless @comment.errors[:username].blank? %>
 <br/>
 <%= f.label :content %>
 <%= f.text_area :content, cols: 20, rows: 10 %>

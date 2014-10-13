@@ -1,4 +1,8 @@
 <%= form_for @article do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= @article.errors[:username].first unless @article.errors[:username].blank? %>
+<br/>
 <%= f.label :title %>
 <%= f.text_field :title %>
 <%= @article.errors[:title].first unless @article.errors[:title].blank? %>

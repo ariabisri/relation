@@ -51,7 +51,7 @@ end
 
 private 
 def params_article
-	params.require(:article).permit(:title, :content, :status)
+	params.require(:article).permit(:title, :content, :status, :username)
 end
 
 
