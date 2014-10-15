@@ -3,9 +3,12 @@
 <p><%= @article.content %></p>
 <h3>Kometar</h3>
 <% @comment.each do |comment| %>
+	dari: <%= comment.username %>
+	</br>
     <%= comment.content %>
-    </br>
+    </br></br>
     <%end%>
+    <%= link_to "Export",  article_path(@article.id, format: 'xls')%> </br>
   <p><%= link_to 'back to index', articles_path %></p>
   
  

@@ -1,14 +1,7 @@
 class ArticlesController < ApplicationController
   def index
   	@article = Article.all
-   # @comment = @article.comments
-    filename="article.xls"
-    respond_to do|format|
-      format.html
-      #format.csv {render text: @article.to_csv}
-      #format.xls {send_data @article.to_csv(col_sep: '\t') }
-      format.xls {headers["Content-Disposition"] = "attachment;filename=\"#{filename}\""}
-    end
+  
   end
 
   def new
@@ -33,6 +26,11 @@ end
 def show
 @article = Article.find_by_id(params[:id])
 @comment = @article.comments
+ filename="article.xls"
+    respond_to do|format|
+      format.html
+      format.xls {headers["Content-Disposition"] = "attachment;filename=\"#{filename}\""}
+    end
 
 end
 
