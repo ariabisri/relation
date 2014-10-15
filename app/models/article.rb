@@ -6,4 +6,7 @@ class Article < ActiveRecord::Base
   validates :status, presence: true
 default_scope {where(status: 'active')}
 has_many :comments, dependent: :destroy
+
+
+
 end
