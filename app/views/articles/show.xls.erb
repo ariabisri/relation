@@ -1,0 +1,23 @@
+<table>
+<tr>
+<th colspan='3'>Article</th>
+</tr>
+<tr>
+<th>username</th><th>title</th><th>content</th>
+</tr>
+<tr><td><%=@article.username%></td><td><%=@article.title%></td><td><%=@article.content%></td>
+</tr>
+<tr></tr>
+<tr>
+<th colspan='3'>Comments</th>	
+</tr>
+<tr>
+<th>username</th><th>comment</th>
+</tr>
+
+<% @comment.each do |com| %>
+<tr>
+<td><%=com.username%></td><td><%=com.content%></td>
+</tr>
+<%end%>
+</table>
