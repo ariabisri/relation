@@ -7,6 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class ="navbar navbar-fixedtop
+navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle"
+				data-toggle="collapse"
+				datatarget=".navbar-collapse">
+		</button>
+		<%= link_to 'Tugas Reporting', root_path, :class=>"navbar-brand" %> 
+		</div>
+		<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav navbar-right">
+<li><%= link_to 'Home',  root_path %></li>
+<li><%= link_to 'New Article', new_article_path %></li>
+</ul>
+		</div>
+	</div>
+</div>
+
+
+<% flash.each do |key, value| %>
+ <h3><font color="red"><%= content_tag :div, value, class: "flash #{key}" %> </h3></font>
+<% end %>
 
 <%= yield %>
 
