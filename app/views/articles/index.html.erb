@@ -1,7 +1,8 @@
-
+<h1>Articles</h1>
+<div id='article'>
 <% @article.each do |article| %>
     <h3><%= article.title %></h3>
-    oleh : <%= article.username %>
+   <h4> oleh : <%= article.username %></h4>
     <p>
 <%= article.content.truncate(20) %>
      <%= link_to 'read more', article_path(article.id) %>
@@ -15,3 +16,5 @@ data: {confirm: 'Delete this data ? '} %></span>
     </p>
     <hr/>
   <% end %>
+  </div>
+  <%= paginate @article %>

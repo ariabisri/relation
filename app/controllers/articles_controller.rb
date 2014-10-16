@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-  	@article = Article.all
+  	@article =  Kaminari.paginate_array(Article.all).page(params[:page]).per(2)
   
   end
 

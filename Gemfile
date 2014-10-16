@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'kaminari'
+gem 'will_paginate'
 
 ruby "2.0.0"
 
